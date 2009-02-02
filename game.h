@@ -3,9 +3,12 @@
 
 #include <QGraphicsView>
 #include <QPoint>
+#include <QList>
+#include <QTimer>
 
 class QGraphicsScene;
 class QGraphicsItemGroup;
+class QGraphicsPixmapItem;
 class Smash;
 
 class GoferSmash : public QGraphicsView {
@@ -27,6 +30,21 @@ class GoferSmash : public QGraphicsView {
 	// Selects a Smash, and Creates it
 	Smash *selectSmash(const QPoint &point);
 
+	// The Photo to Smash
+	QGraphicsPixmapItem *smash;
+
+	enum State {
+		SmashHidden = 0,
+		SmashVisible,
+		SmashInProgress
+	};
+	State state;
+
+	// List of all the Points
+	QList <QPoint> points;
+
+	QTimer timer;
+
     public:
 	// Constructor/Destructor
 	GoferSmash(QWidget *parent = NULL);
@@ -40,6 +58,9 @@ class GoferSmash : public QGraphicsView {
 
 	// Deletes an old smash item
 	void deleteOldSmash(Smash *);
+
+	// Timeout, either show or hide
+	void timeout();
 };
 
 #endif
