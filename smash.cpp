@@ -1,10 +1,19 @@
 #include "smash.h"
 
-Smash::Smash(const QPoint &point, QObject *parent) : QObject(parent), target(point)
-{}
+#include <QGraphicsScene>
+
+Smash::Smash(const QPoint &point, QGraphicsScene *parent) : QObject(), target(point), group(NULL)
+{
+	group = new QGraphicsItemGroup;
+	parent->addItem(group);
+}
 
 Smash::~Smash()
-{}
+{
+	group->hide();
+	group->scene()->removeItem(group);
+	delete group;
+}
 
 void Smash::finished()
 {

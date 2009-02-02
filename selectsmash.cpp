@@ -7,5 +7,5 @@
 
 Smash *GoferSmash::selectSmash(const QPoint &point)
 {
-	return new BoxingSmash(point, this);	
+	return new BoxingSmash(point, scene);	
 }

@@ -5,7 +5,7 @@
 #include <QMouseEvent>
 #include <QGraphicsLineItem>
 
-GoferSmash::GoferSmash(QWidget *parent): QGraphicsView(parent), scene(NULL), board(NULL)
+GoferSmash::GoferSmash(QWidget *parent): QGraphicsView(parent), scene(NULL), board(NULL), deleteQueue(NULL)
 {
 	// Create A Blank Scene
 	scene = new QGraphicsScene();
@@ -21,7 +21,9 @@ GoferSmash::GoferSmash(QWidget *parent): QGraphicsView(parent), scene(NULL), boa
 
 void GoferSmash::mousePressEvent(QMouseEvent *event)
 {
-	
+	Smash *smash = selectSmash(event->pos());	
+	connect(smash, SIGNAL(deleteMe(Smash *)), this, SLOT(deleteOldSmash(Smash *)));
+	smash->start();
 }
 
 GoferSmash::~GoferSmash()
