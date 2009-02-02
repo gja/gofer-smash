@@ -1,8 +1,8 @@
 #include "game.h"
 #include "smash.h"
 
-#include "effects/boxing.h"
-#include "effects/pie.h"
+#include "boxing.h"
+#include "pie.h"
 
 #include <QPoint>
 
