@@ -115,11 +115,13 @@ void GoferSmash::timeout()
 	switch (state) {
 		case SmashVisible:
 			smash->hide();
+			state = SmashHidden;
 			break;
 		case SmashHidden:
 			point = points[rand() % 9];
 			smash->setPos(point);
 			smash->show();
+			state = SmashVisible;
 			break;
 		case SmashInProgress:
 			break;
