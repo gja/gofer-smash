@@ -45,6 +45,7 @@ void GoferSmash::initializeGameBoard()
 		delete board;
 
 	board = new QGraphicsItemGroup;
+	board->setZValue(-1.0f);
 	new QGraphicsLineItem( x_3 + 1, 0, x_3 + 1, y, board);
 	new QGraphicsLineItem( 2 * x_3 + 2, 0, 2 * x_3 + 2, y, board);
 	new QGraphicsLineItem( 0, y_3 + 1, x, y_3 + 1, board);

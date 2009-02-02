@@ -4,17 +4,20 @@
 #include "smash.h"
 
 class QTimer;
-class QTimerLine;
+class QTimeLine;
 class QGraphicsPixmapItem;
+class QGraphicsItemAnimation;
 class QGraphicsScene;
 
 class BoxingSmash : public Smash {
 	Q_OBJECT
 
 	QTimer *powTimer;
-	QTimerLine *punchTimeline;
+	QTimeLine *punchTimeline;
 
 	QGraphicsPixmapItem *pow;
+	QGraphicsPixmapItem *fist;
+	QGraphicsItemAnimation *punch;
 
     public:
 	

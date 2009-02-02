@@ -10,12 +10,12 @@ Smash::Smash(const QPoint &point, QGraphicsScene *parent) : QObject(), target(po
 
 Smash::~Smash()
 {
-	group->hide();
-	group->scene()->removeItem(group);
 	delete group;
 }
 
 void Smash::finished()
 {
+	group->hide();
+	group->scene()->removeItem(group);
 	emit deleteMe(this);
 }
