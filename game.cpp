@@ -27,7 +27,7 @@ GoferSmash::GoferSmash(QWidget *parent): QGraphicsView(parent), scene(NULL), boa
 
 void GoferSmash::mousePressEvent(QMouseEvent *event)
 {
-	if (! smash->isUnderMouse() )
+	if (! smash->isUnderMouse() || state != SmashVisible)
 		return;
 
 	state = SmashInProgress;
