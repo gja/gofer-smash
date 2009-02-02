@@ -5,3 +5,8 @@ Smash::Smash(const QPoint &point, QObject *parent) : QObject(parent), target(poi
 
 Smash::~Smash()
 {}
+
+void Smash::finished()
+{
+	emit deleteMe(this);
+}

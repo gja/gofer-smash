@@ -1,4 +1,5 @@
 #include "game.h"
+#include "smash.h"
 
 #include <QDebug>
 #include <QMouseEvent>

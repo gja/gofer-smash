@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include <QGraphicsView>
+#include <QPoint>
 
 class QGraphicsScene;
 class QGraphicsItemGroup;
@@ -22,6 +23,9 @@ class GoferSmash : public QGraphicsView {
 
 	// Initialize the gameboard
 	void initializeGameBoard();
+
+	// Selects a Smash, and Creates it
+	Smash *selectSmash(const QPoint &point);
 
     public:
 	// Constructor/Destructor

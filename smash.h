@@ -10,15 +10,15 @@ class Smash : public QObject {
 
 	QPoint target;
 
+    public slots:
 	// Call me when you are finished with the class
-	inline void finished()
-	{
-		emit deleteMe(this);
-	}
+	void finished();
 
     public:
 	Smash(const QPoint &target, QObject *parent = NULL);
 	virtual ~Smash();
+
+	virtual void start() = 0;
 
     signals:
 	// emitted when this is done
