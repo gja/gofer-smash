@@ -56,3 +56,11 @@ void GoferSmash::resizeEvent(QResizeEvent *event)
 	if (event->size() != event->oldSize())
 		initializeGameBoard();
 }
+
+void GoferSmash::deleteOldSmash(Smash *smash)
+{
+	if (deleteQueue != NULL)
+		delete deleteQueue;
+
+	deleteQueue = smash;
+}

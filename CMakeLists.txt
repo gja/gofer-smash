@@ -6,8 +6,8 @@ project(gofer-smash)
 find_package(Qt4 REQUIRED)
 include(${QT_USE_FILE})
 
-set (SOURCES main.cpp game.cpp)
-QT4_WRAP_CPP(SOURCES game.h)
+set (SOURCES main.cpp game.cpp smash.cpp)
+QT4_WRAP_CPP(SOURCES game.h smash.h)
 
 add_executable(gofer-smash ${SOURCES})
 target_link_libraries(gofer-smash ${QT_LIBRARIES})
