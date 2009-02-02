@@ -3,13 +3,13 @@
 
 #include <QGraphicsView>
 
-class GopherSmash : public QGraphicsView {
+class GoferSmash : public QGraphicsView {
 
 	Q_OBJECT
 
     public:
-	GopherSmash(QWidget *parent) : QGraphicsView(parent) {}
-	GopherSmash() : QGraphicsView() {}
+	GoferSmash(QWidget *parent) : QGraphicsView(parent) { GoferSmash(); }
+	GoferSmash() : QGraphicsView() {}
 };
 
 #endif

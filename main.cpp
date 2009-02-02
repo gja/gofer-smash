@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 {
 	QApplication app(argc, argv);
 
-	GopherSmash view;
+	GoferSmash view;
 
 	view.setGeometry(0, 0, 450, 450);
 
