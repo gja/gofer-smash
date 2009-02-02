@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 
 	GoferSmash view;
 
-	view.resize(450, 450);
+	view.resize(302, 302);
 
 	view.show();
 
