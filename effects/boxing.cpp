@@ -7,6 +7,9 @@
 #include <QTimer>
 #include <QTimeLine>
 
+#include "glove_png.h"
+#include "pow_png.h"
+
 BoxingSmash::BoxingSmash(const QPoint &point, QGraphicsScene *parent) : Smash(point, parent) , powTimer(NULL), punchTimeline(NULL), pow(NULL), fist(NULL), punch(NULL)
 {
 	int x, y;
@@ -15,7 +18,9 @@ BoxingSmash::BoxingSmash(const QPoint &point, QGraphicsScene *parent) : Smash(po
 	powTimer = new QTimer(this);
 	punchTimeline = new QTimeLine(500, this);
 
-	QPixmap t = QPixmap("data/pow.png").scaled(size / 3);
+	QPixmap t;
+	t.loadFromData(pow_png, sizeof(pow_png));
+	t = t.scaled(size / 3);
 	pow = new QGraphicsPixmapItem(t, group);
 	pow->hide();
 	pow->setZValue(1.0f);
@@ -23,7 +28,8 @@ BoxingSmash::BoxingSmash(const QPoint &point, QGraphicsScene *parent) : Smash(po
 	y = target.y() - t.size().height() / 2;
 	pow->setPos(x, y);
 
-	t = QPixmap("data/glove.png").scaledToHeight(size.width() / 6);
+	t.loadFromData(glove_png, sizeof(glove_png));
+	t = t.scaledToHeight(size.width() / 6);
 	y = target.y() - t.size().height() / 2;
 	fist = new QGraphicsPixmapItem(t, group);
 	fist->hide();
