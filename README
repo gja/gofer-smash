@@ -1,6 +1,6 @@
 This is a program to clobber least favorite person - gopher style.
 
-To play, copy an image that you want to smash as smash.jpg into the folder data/
+To play, copy an image that you want to smash as smash.png into the folder data/
 
 Make sure that the folder data/ is in your current directory, and run gopher-smash.
 
