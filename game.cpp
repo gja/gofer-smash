@@ -81,7 +81,7 @@ void GoferSmash::initializeGameBoard()
 	if (smash)
 		delete smash;
 
-	QPixmap t = QPixmap("data/smash.jpg").scaled(size() / 3);
+	QPixmap t = QPixmap("data/smash.png").scaled(size() / 3);
 	smash = new QGraphicsPixmapItem(t);
 	smash->hide();
 	smash->setZValue(-1.0f);
