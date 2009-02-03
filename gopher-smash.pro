@@ -8,5 +8,5 @@ DEPENDPATH += .
 INCLUDEPATH += .
 
 # Input
-HEADERS += boxing.h game.h glove_png.h pow_png.h smash.h smash_png.h
-SOURCES += boxing.cpp game.cpp main.cpp selectsmash.cpp smash.cpp
+HEADERS += boxing.h game.h glove_png.h pow_png.h smash.h smash_png.h pie.h
+SOURCES += boxing.cpp game.cpp main.cpp selectsmash.cpp smash.cpp pie.cpp
