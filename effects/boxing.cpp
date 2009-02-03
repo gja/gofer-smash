@@ -24,13 +24,13 @@ BoxingSmash::BoxingSmash(const QPoint &point, QGraphicsScene *parent) : Smash(po
 	pow = new QGraphicsPixmapItem(t, group);
 	pow->hide();
 	pow->setZValue(1.0f);
-	x = target.x() - t.size().width() / 2;
-	y = target.y() - t.size().height() / 2;
+	x = target.x() - t.width() / 2;
+	y = target.y() - t.height() / 2;
 	pow->setPos(x, y);
 
 	t.loadFromData(glove_png, sizeof(glove_png));
-	t = t.scaledToHeight(size.width() / 6);
-	y = target.y() - t.size().height() / 2;
+	t = t.scaledToHeight(size.height() / 6);
+	y = target.y() - t.height() / 2;
 	fist = new QGraphicsPixmapItem(t, group);
 	fist->hide();
 	fist->setZValue(0.5f);
