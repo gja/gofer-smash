@@ -22,6 +22,7 @@ bin2c( data/pow.png pow_png.h IMAGEFILES )
 bin2c( data/glove.png glove_png.h IMAGEFILES )
 bin2c( data/smash.png smash_png.h IMAGEFILES )
 bin2c( data/splat.png splat_png.h IMAGEFILES )
+bin2c( data/pie.png pie_png.h IMAGEFILES )
 
 add_custom_target(images DEPENDS ${IMAGEFILES})
 
