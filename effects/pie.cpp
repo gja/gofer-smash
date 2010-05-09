@@ -7,9 +7,6 @@
 #include <QTimer>
 #include <QTimeLine>
 
-#include "pie_png.h"
-#include "splat_png.h"
-
 PieSmash::PieSmash(const QPoint &point, QGraphicsScene *parent) : Smash(point, parent) , splatTimer(NULL), throwTimeline(NULL), splat(NULL),pie(NULL), throwing(NULL)
 {
 	int x, y;
@@ -19,7 +16,7 @@ PieSmash::PieSmash(const QPoint &point, QGraphicsScene *parent) : Smash(point, p
 	throwTimeline = new QTimeLine(500, this);
 
 	QPixmap t;
-	t.loadFromData(splat_png, sizeof(splat_png));
+    t = QPixmap(":data/splat.png");
 	t = t.scaled(size / 3);
 	splat = new QGraphicsPixmapItem(t, group);
 	splat->hide();
@@ -28,7 +25,7 @@ PieSmash::PieSmash(const QPoint &point, QGraphicsScene *parent) : Smash(point, p
 	y = target.y() - t.height() / 2;
 	splat->setPos(x, y);
 
-	t.loadFromData(pie_png, sizeof(pie_png));
+    t = QPixmap(":data/pie.png");
 	t = t.scaledToHeight(size.height() / 3);
 	y = target.y() - t.height() / 2;
 	pie = new QGraphicsPixmapItem(t, group);

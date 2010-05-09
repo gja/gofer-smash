@@ -8,8 +8,6 @@
 #include <QGraphicsPixmapItem>
 #include <QList>
 
-#include "smash_png.h"
-
 GoferSmash::GoferSmash(QWidget *parent): QGraphicsView(parent), scene(NULL), board(NULL), deleteQueue(NULL), smash(NULL), state(SmashHidden)
 {
 	// Create A Blank Scene
@@ -84,7 +82,7 @@ void GoferSmash::initializeGameBoard()
 		delete smash;
 
 	QPixmap t;
-	t.loadFromData(smash_png, sizeof(smash_png));
+    t = QPixmap(":data/smash.png");
 	t = t.scaled(size() / 3);
 	smash = new QGraphicsPixmapItem(t);
 	smash->hide();

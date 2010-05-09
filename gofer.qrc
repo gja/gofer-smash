@@ -1,0 +1,10 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource>
+        <file>data/pow.png</file>
+        <file>data/glove.png</file>
+        <file>data/pie.png</file>
+        <file>data/splat.png</file>
+        <file>data/smash.png</file>
+    </qresource>
+</RCC>
